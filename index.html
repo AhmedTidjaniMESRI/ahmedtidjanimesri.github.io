@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed MESRI | Développeur Junior – BUT 3 Informatique</title>
+  <meta name="description" content="Portfolio d'Ahmed MESRI, étudiant en 3e année de BUT Informatique à l'IUT du Limousin, à la recherche d'un stage en développement du 22/02/2027 au 12/06/2027. Stage chez UNOVA (Sulf, Easy-Flow) et projets universitaires (application de questionnaires, jeu LATICE).">
+  <meta name="keywords" content="Ahmed Mesri, Développeur Junior, Stage développement, BUT Informatique Limoges, UNOVA, Ruby on Rails, PHP, Java, JavaFX, MariaDB, PostgreSQL">
+  <meta name="author" content="Ahmed Tidjani MESRI">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ahmed MESRI | Développeur Junior – BUT 3 Informatique">
+  <meta property="og:description" content="Stage chez UNOVA, projets universitaires et compétences d'un étudiant en BUT Informatique à la recherche d'un stage en développement.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20">
+</head>
+
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scroll-progress-bar"></div>
+
+  <!-- Ambient Glowing Backgrounds -->
+  <div class="ambient-bg" aria-hidden="true">
+    <canvas id="galaxy-canvas"></canvas>
+    <canvas id="sector-canvas"></canvas>
+  </div>
+
+  <!-- Hyperspace Warp Drive Transition Canvas -->
+  <canvas id="hyperspace-canvas" class="hyperspace-canvas" aria-hidden="true"></canvas>
+
+  <!-- Celestial Sector Control Dock (Vertical navigation on the right) -->
+  <nav class="sector-nav-bar" id="sector-nav-bar" aria-label="Navigation stellaire">
+    <div class="sector-nav-inner">
+      <button class="btn-sector-back" id="btn-sector-back" title="Retour à la carte stellaire (Touche Échap)" aria-label="Retour à la carte stellaire">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span class="radar-tooltip">Carte Stellaire</span>
+      </button>
+
+      <div class="sector-dock-divider" aria-hidden="true"></div>
+
+      <div class="sector-radar-nav" id="sector-radar-nav" aria-label="Sauts inter-secteurs">
+        <button class="radar-node" data-target="projets" title="Projets" style="--node-color: #38bdf8; --node-rgb: 56, 189, 248;">
+          <span class="radar-text">Projets</span>
+        </button>
+        <button class="radar-node" data-target="competences" title="Stack Technique" style="--node-color: #67e8f9; --node-rgb: 103, 232, 249;">
+          <span class="radar-text">Stack</span>
+        </button>
+        <button class="radar-node" data-target="parcours" title="Parcours" style="--node-color: #a78bfa; --node-rgb: 167, 139, 250;">
+          <span class="radar-text">Parcours</span>
+        </button>
+        <button class="radar-node" data-target="contact" title="Communication" style="--node-color: #34d399; --node-rgb: 52, 211, 153;">
+          <span class="radar-text radar-text-comm">COMMUNI<br>CATION</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="accueil" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+
+            <h1 class="hero-title">
+              <span class="title-name">Ahmed MESRI</span>
+              <span class="title-sub">Développeur Junior</span>
+            </h1>
+
+            <p class="hero-pitch">
+              Étudiant en 3ème année de BUT Informatique à l'IUT du Limousin, <span class="hero-highlight">je cherche un stage en développement sur la période du 22/02/2027 - 12/06/2027</span>.<br>J'ai conçu des applications web et mobiles en entreprise chez UNOVA et lors de projets universitaires. Curieux et rigoureux, j'aime transformer un besoin concret en un logiciel fiable et agréable à utiliser.
+            </p>
+
+            <div class="hero-skills">
+              <span>Java</span><span>PHP</span><span>Python</span><span>HTML / CSS</span><span>MySQL</span><span>PostgreSQL</span><span>Réseau TCP/IP</span><span>Git</span><span>Méthodes agiles</span>
+            </div>
+
+            <p class="hero-goal"><strong>Objectif :</strong> poursuivre en master, en développement logiciel ou en exploitation de données.</p>
+
+
+          </div>
+
+          <div class="hero-visual">
+            <div class="avatar-halo-wrapper">
+              <div class="avatar-ring-outer"></div>
+              <div class="avatar-ring-inner"></div>
+              <div class="avatar-card">
+                <img src="assets/photo-ahmed.webp" alt="Photo d'Ahmed MESRI" class="avatar-img" width="657" height="769">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Constellation Star Navigation Nodes -->
+      <nav class="hero-stars-nav" aria-label="Navigation par constellations">
+        <!-- 1. En haut à gauche : Stack Technique (#competences) -->
+        <a href="#competences" class="star-nav-node star-node-stack" aria-label="Naviguer vers la Stack Technique">
+          <div class="star-nav-core">
+            <span class="star-flare-h"></span>
+            <span class="star-flare-v"></span>
+            <span class="star-center-dot"></span>
+            <span class="star-pulse-ring"></span>
+          </div>
+          <div class="star-nav-caption">
+            <span class="star-nav-title">Stack Technique</span>
+            <span class="star-nav-sub">Compétences & Langages</span>
+          </div>
+        </a>
+
+        <!-- 3. En bas à gauche : Projets (#projets) -->
+        <a href="#projets" class="star-nav-node star-node-projets" aria-label="Naviguer vers les Projets">
+          <div class="star-nav-core">
+            <span class="star-flare-h"></span>
+            <span class="star-flare-v"></span>
+            <span class="star-center-dot"></span>
+            <span class="star-pulse-ring"></span>
+          </div>
+          <div class="star-nav-caption">
+            <span class="star-nav-title">Projets</span>
+            <span class="star-nav-sub">Académiques & Stage</span>
+          </div>
+        </a>
+
+        <!-- 4. Au milieu en bas : Parcours (#parcours) -->
+        <a href="#parcours" class="star-nav-node star-node-parcours" aria-label="Naviguer vers le Parcours">
+          <div class="star-nav-core">
+            <span class="star-flare-h"></span>
+            <span class="star-flare-v"></span>
+            <span class="star-center-dot"></span>
+            <span class="star-pulse-ring"></span>
+          </div>
+          <div class="star-nav-caption">
+            <span class="star-nav-title">Parcours</span>
+            <span class="star-nav-sub">Formation & Chronologie</span>
+          </div>
+        </a>
+
+        <!-- 5. En bas à droite : Communication / Contact (#contact) -->
+        <a href="#contact" class="star-nav-node star-node-contact" aria-label="Naviguer vers Contact">
+          <div class="star-nav-core">
+            <span class="star-flare-h"></span>
+            <span class="star-flare-v"></span>
+            <span class="star-center-dot"></span>
+            <span class="star-pulse-ring"></span>
+          </div>
+          <div class="star-nav-caption">
+            <span class="star-nav-title">Communication</span>
+            <span class="star-nav-sub">Me Contacter & Échanger</span>
+          </div>
+        </a>
+      </nav>
+    </section>
+
+    <!-- PROJETS (ACADÉMIQUES & STAGE) -->
+    <section id="projets" class="cosmic-sector">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Mes <span class="gradient-text">Projets</span></h2>
+          <p class="section-desc">
+            Les projets réalisés pendant mon BUT Informatique et mon stage chez UNOVA (Limoges).
+          </p>
+        </div>
+
+        <div class="projects-controls">
+          <div class="filter-tabs" role="group" aria-label="Filtrer les projets">
+            <button class="filter-tab active" data-filter="all">Tous</button>
+            <button class="filter-tab" data-filter="academique">Projets académiques</button>
+            <button class="filter-tab" data-filter="stage">Projets de stage</button>
+          </div>
+
+          <div class="search-wrapper">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="project-search" class="search-input" placeholder="Filtrer par techno, mot-clé...">
+          </div>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div class="projects-grid" id="projects-grid"></div>
+
+      </div>
+    </section>
+
+    <!-- COMPETENCES TECHNIQUES -->
+    <section id="competences" class="cosmic-sector">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Stack Technique & <span class="gradient-text">Expertise</span></h2>
+          <p class="section-desc">
+            Un socle solide acquis à l'IUT du Limousin et éprouvé sur des applications réelles en production.
+          </p>
+        </div>
+
+        <div class="skills-solar-grid" id="skills-container"></div>
+
+      </div>
+    </section>
+
+    <!-- PARCOURS & FORMATION (TIMELINE) -->
+    <section id="parcours" class="cosmic-sector">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Parcours & <span class="gradient-text">Expériences</span></h2>
+          <p class="section-desc">
+            Mon évolution universitaire et professionnelle.
+          </p>
+        </div>
+
+        <div class="timeline-wrap" id="timeline-wrap"></div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="cosmic-sector">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Discutons de vos <span class="gradient-text">Projets</span></h2>
+          <p class="section-desc">
+            Je suis disponible pour un stage de fin d'études ou de nouvelles opportunités de développement.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h3 class="contact-info-title">Restons Connectés</h3>
+            <p class="contact-info-desc">
+              Une opportunité, un projet ou simplement envie d'échanger sur l'ingénierie logicielle ? N'hésitez pas à me contacter directement !
+            </p>
+
+            <div class="contact-items">
+              <div class="contact-item-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <span class="contact-item-label">Email Personnel & Pro</span>
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.15rem;">
+                    <a href="mailto:m.tidjani87@gmail.com" class="contact-item-val">m.tidjani87@gmail.com</a>
+                    <button class="copy-email-btn" title="Copier l'adresse email">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                      <span>Copier</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <span class="contact-item-label">Téléphone</span>
+                  <a href="tel:+33767661113" class="contact-item-val">+33 7 67 66 11 13</a>
+                </div>
+              </div>
+
+              <div class="contact-item-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <span class="contact-item-label">Adresse</span>
+                  <p class="contact-item-val">8 impasse de la Barboute, 16730 Trois Palis</p>
+                </div>
+              </div>
+
+              <div class="contact-item-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                </div>
+                <div>
+                  <span class="contact-item-label">Recherche de Stage</span>
+                  <p class="contact-item-val" style="color: var(--accent-gold);">22/02/2027 – 12/06/2027</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ce que j'aime / Hobbies du CV -->
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.5rem; margin-top: 1.5rem;">
+              <h4 style="font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.75rem; color: var(--text-main);">
+                Ce que j'aime (Centres d'intérêt)
+              </h4>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; color: var(--text-muted);">
+                <div>🎮 <strong>Jeux vidéo :</strong> League of Legends, Hollow Knight, Elden Ring, The Binding of Isaac</div>
+                <div>🏀 <strong>Sport :</strong> Football, Basketball</div>
+                <div>📖 <strong>Manga :</strong> JoJo's Bizarre Adventure</div>
+                <div>🗣️ <strong>Langues :</strong> Français (maternelle), Anglais (niveau professionnel)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Votre Nom & Prénom</label>
+              <input type="text" id="contact-name" name="name" class="form-input" placeholder="ex: Jean Dupont" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Votre Adresse Email</label>
+              <input type="email" id="contact-email" name="email" class="form-input" placeholder="ex: jean.dupont@entreprise.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Objet du Message</label>
+              <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="ex: Opportunité de Stage / Échange Projet" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-msg" class="form-label">Votre Message</label>
+              <textarea id="contact-msg" name="message" class="form-textarea" placeholder="Expliquez-moi votre besoin ou vos opportunités..." required></textarea>
+            </div>
+
+            <!-- Piège anti-spam : invisible pour les humains -->
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+
+            <button type="submit" class="btn btn-primary" id="contact-submit" style="align-self: flex-start;">
+              <span>Envoyer le Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-text">
+          &copy; 2026 Ahmed Tidjani MESRI • BUT Informatique (IUT du Limousin)
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL CASE STUDY (PROJECT DETAILS DRAWER) -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fermer la vue détaillée">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-hero">
+        <img src="" alt="" id="modal-img" class="modal-hero-img">
+        <div class="modal-hero-gradient"></div>
+      </div>
+
+      <div class="modal-content">
+        <div class="modal-badge-row">
+          <span class="project-badge-tag" id="modal-badge"></span>
+          <span class="project-year" id="modal-year"></span>
+        </div>
+
+        <h2 class="modal-title" id="modal-title"></h2>
+        <div class="modal-context" id="modal-context"></div>
+
+        <div class="modal-metrics-grid" id="modal-metrics"></div>
+
+        <h3 class="modal-section-h3" data-for="modal-desc">Contexte</h3>
+        <p class="modal-desc-p" id="modal-desc"></p>
+
+        <h3 class="modal-section-h3" data-for="modal-objectif">Objectif</h3>
+        <p class="modal-desc-p" id="modal-objectif"></p>
+
+        <h3 class="modal-section-h3" data-for="modal-features">Ma contribution</h3>
+        <ul class="modal-features-list" id="modal-features"></ul>
+
+        <h3 class="modal-section-h3" data-for="modal-tags">Technologies et méthodes</h3>
+        <div class="project-tech-tags" id="modal-tags" style="margin-bottom: 1.5rem;"></div>
+
+        <h3 class="modal-section-h3" data-for="modal-challenges">Résultat</h3>
+        <p class="modal-desc-p" id="modal-challenges"></p>
+
+        <h3 class="modal-section-h3" data-for="modal-preuves">Preuves</h3>
+        <ul class="modal-features-list" id="modal-preuves" style="margin-bottom: 1.5rem;"></ul>
+
+        <div class="modal-actions">
+          <a href="#" id="modal-btn-github" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>Dépôt GitHub</span>
+          </a>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND PALETTE (CTRL + K) -->
+  <div class="cmd-modal-overlay" id="cmd-palette-modal">
+    <div class="cmd-box">
+      <div class="cmd-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="cmd-input" class="cmd-input" placeholder="Tapez une commande ou naviguez...">
+        <span class="cmd-shortcut">Échap pour fermer</span>
+      </div>
+      <ul class="cmd-list" id="cmd-list"></ul>
+    </div>
+  </div>
+
+  <script type="module" src="script.js?v=16"></script>
+</body>
+
+</html>

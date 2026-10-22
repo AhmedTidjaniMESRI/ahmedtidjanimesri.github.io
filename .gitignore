@@ -1,0 +1,10 @@
+# Serveurs de test en local (inutiles en ligne)
+serve.js
+server.js
+
+# Photos personnelles non utilisées par le site
+IMG_*.jpg
+
+# Fichiers système
+Thumbs.db
+.DS_Store
