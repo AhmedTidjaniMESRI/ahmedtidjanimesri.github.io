@@ -8,3 +8,6 @@ IMG_*.jpg
 # Fichiers système
 Thumbs.db
 .DS_Store
+
+# Outils locaux
+.claude/
